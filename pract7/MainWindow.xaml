@@ -35,7 +35,7 @@
             </StackPanel>
         </GroupBox>
         <TextBlock Text="Факультет" HorizontalAlignment="Left" Margin="243,279,0,0" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Height="22"/>
-        <ComboBox x:Name="faculties" HorizontalAlignment="Left" Margin="336,276,0,0" VerticalAlignment="Top" Width="120" FontSize="18">
+        <ComboBox x:Name="faculties" HorizontalAlignment="Left" Margin="336,276,0,0" VerticalAlignment="Top" Width="120" FontSize="18" SelectionChanged="faculties_SelectionChanged">
             <ComboBoxItem Content="информатики" ></ComboBoxItem>
             <ComboBoxItem Content="экономики" ></ComboBoxItem>
         </ComboBox>

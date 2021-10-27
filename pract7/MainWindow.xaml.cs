@@ -89,16 +89,10 @@ namespace pract7
             if (faculties.SelectedIndex == 0)
             {
                 somebody.Faculty = "информатики";
-                groups.Items.Clear();
-                groups.Items.Add("Прикладная информатика");
-                groups.Items.Add("Информационные системы");
             }
             if (faculties.SelectedIndex == 1)
             {
                 somebody.Faculty = "экономики";
-                groups.Items.Clear();
-                groups.Items.Add("Экономика и управление");
-                groups.Items.Add("Экономическая безопасность");
             }
 
             if (faculties.SelectedIndex == 0 && groups.SelectedIndex == 0)
@@ -182,6 +176,10 @@ namespace pract7
             возраст.Text = "";
             вес.Text = "";
             пол.SelectedIndex = -1;
+            //почему не работает?
+            //faculties.SelectedIndex = default;
+            //groups.SelectedIndex = default;
+            //courses.SelectedIndex = default;
 
         }
 
@@ -191,6 +189,24 @@ namespace pract7
             возраст.Text = "";
             вес.Text = "";
             пол.SelectedIndex = -1;
+            //почему не работает?
+            //faculties.SelectedIndex = default;
+            //groups.SelectedIndex = default;
+            //courses.SelectedIndex = default;
+        }
+
+        private void faculties_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (faculties.SelectedIndex == 0)
+            {
+                groups.Items.Insert(0, "Прикладная информатика");
+                groups.Items.Insert(1, "Информационные системы");
+            }
+            if (faculties.SelectedIndex == 1)
+            {
+                groups.Items.Insert(0, "Экономика и управление");
+                groups.Items.Insert(1, "Экономическая безопасность");
+            }
         }
     }
 }
