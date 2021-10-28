@@ -177,9 +177,9 @@ namespace pract7
             вес.Text = "";
             пол.SelectedIndex = -1;
             //почему не работает?
-            //faculties.SelectedIndex = default;
-            //groups.SelectedIndex = default;
-            //courses.SelectedIndex = default;
+            //faculties.SelectedIndex = -1;
+            //groups.SelectedIndex = -1;
+            //courses.SelectedIndex = -1;
 
         }
 
@@ -190,20 +190,22 @@ namespace pract7
             вес.Text = "";
             пол.SelectedIndex = -1;
             //почему не работает?
-            //faculties.SelectedIndex = default;
-            //groups.SelectedIndex = default;
-            //courses.SelectedIndex = default;
+            //faculties.SelectedIndex = -1;
+            //groups.SelectedIndex = -1;
+            //courses.SelectedIndex = -1;
         }
 
         private void faculties_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (faculties.SelectedIndex == 0)
             {
+                groups.Items.Clear();
                 groups.Items.Insert(0, "Прикладная информатика");
                 groups.Items.Insert(1, "Информационные системы");
             }
             if (faculties.SelectedIndex == 1)
             {
+                groups.Items.Clear();
                 groups.Items.Insert(0, "Экономика и управление");
                 groups.Items.Insert(1, "Экономическая безопасность");
             }
