@@ -11,7 +11,7 @@ namespace pract7
         public string group;
 
 
-        public Student(string inName, int inHowOld, string inSex, int inWeight, string inFaculty, string inCourse, string inGroup) : base(inName, inHowOld, inSex, inWeight)
+        public Student(string inName, int inAge, string inSex, int inWeight, string inFaculty, string inCourse, string inGroup) : base(inName, inAge, inSex, inWeight)
         {
             faculty = inFaculty;
             course = inCourse;
@@ -56,13 +56,13 @@ namespace pract7
 
         public new string ShowInformation()
         {
-            string info = "Имя человека - " + name + "\n" + "Пол - " + sex + "\n" + "Вес - " + weight + "кг\n" + "Возраст (лет) - " + howOld + "\nФакультет - " + faculty + "\nГруппа/специальность - " + group + "\nКурс - " + course;
+            string info = "Имя человека - " + name + "\n" + "Пол - " + sex + "\n" + "Вес - " + weight + "кг\n" + "Возраст (лет) - " + age + "\nФакультет - " + faculty + "\nГруппа/специальность - " + group + "\nКурс - " + course;
             return info;
         }
 
         public static Student operator ++(in Student he)
         {
-            he.HowOld = he.HowOld + 1;
+            he.Age = he.Age + 1;
             return he;
         }
     }

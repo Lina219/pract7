@@ -7,15 +7,15 @@ namespace pract7
     class Man
     {
         public string name;
-        public int howOld;
+        public int age;
         public string sex;
         public int weight;
 
 
-        public Man(string inName, int inHowOld, string inSex, int inWeight)
+        public Man(string inName, int inAge, string inSex, int inWeight)
         {
             name = inName;
-            howOld = inHowOld;
+            age = inAge;
             sex = inSex;
             weight = inWeight;
         }
@@ -34,15 +34,15 @@ namespace pract7
         }
 
 
-        public int HowOld
+        public int Age
         {
             get
             {
-                return howOld;
+                return age;
             }
             set
             {
-                howOld = value;
+                age = value;
             }
         }
 
@@ -75,14 +75,14 @@ namespace pract7
 
         public string ShowInformation()
         {
-            string info = "Имя человека - " + name + "\n" + "Пол - " + sex + "\n" + "Вес - " + weight + "кг\n" + "Возраст (лет) - " + howOld;
+            string info = "Имя человека - " + name + "\n" + "Пол - " + sex + "\n" + "Вес - " + weight + "кг\n" + "Возраст (лет) - " + age;
             return info;
         }
 
 
         public static Man operator ++(in Man he)
         {
-            he.HowOld = he.HowOld + 1;
+            he.Age = he.Age + 1;
             return he;
         }
 

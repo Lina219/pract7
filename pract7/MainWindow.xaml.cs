@@ -24,26 +24,26 @@ namespace pract7
         {
             InitializeComponent();
         }
-        Student he = new Student("", 0, "", 0, "", "", "");
-        Student she = new Student("", 0, "", 0, "", "", "");
-
+        Student man1 = new Student("", 0, "", 0, "", "", "");
+        Student man2 = new Student("", 0, "", 0, "", "", "");
+        
         private void Out_Click(object sender, RoutedEventArgs e)
         {
-            TextBox.Text = he.ShowInformation() + "\n\n" + she.ShowInformation();
+            TextBox.Text = man1.ShowInformation() + "\n\n" + man2.ShowInformation();
         }
 
         private void ChangeParameters_Click(object sender, RoutedEventArgs e)
         {
             if (person1.IsChecked == true)
             {
-                FillInformation(he);
+                FillInformation(man1);
             }
 
             if (person2.IsChecked == true)
             {
-                FillInformation(she);
+                FillInformation(man2);
             }
-            TextBox.Text = he.ShowInformation() + "\n\n" + she.ShowInformation();
+            TextBox.Text = man1.ShowInformation() + "\n\n" + man2.ShowInformation();
         }
 
         private void FillInformation(Student somebody)
@@ -62,15 +62,15 @@ namespace pract7
                 somebody.Sex = "женский";
             }
 
-            if (Int32.TryParse(возраст.Text, out int howOld))
+            if (Int32.TryParse(возраст.Text, out int age))
             {
-                if (howOld < 0)
+                if (age < 0)
                 {
                     MessageBox.Show("Возраст не может быть отрицательным");
                 }
                 else
                 {
-                    somebody.HowOld = howOld;
+                    somebody.Age = age;
                 }
             }
 
@@ -144,27 +144,27 @@ namespace pract7
         {
             if (person1.IsChecked == true)
             {
-                he++;
-                возраст.Text = he.HowOld.ToString();
+                man1++;
+                возраст.Text = man1.Age.ToString();
             }
             if (person2.IsChecked == true)
             {
-                she++;
-                возраст.Text = she.HowOld.ToString();
+                man2++;
+                возраст.Text = man2.Age.ToString();
             }
         }
 
         private void сравнить_Click(object sender, RoutedEventArgs e)
         {
-            if (he > she)
+            if (man1 > man2)
             {
                 MessageBox.Show("Вес 1 человека больше, чем вес 2 человека");
             }
-            if (he < she)
+            if (man1 < man2)
             {
                 MessageBox.Show("Вес 1 человека меньше, чем вес 2 человека");
             }
-            if (he.Weight == she.Weight)
+            if (man1.Weight == man2.Weight)
             {
                 MessageBox.Show("Вес 1 человека равен весу 2 человека");
             }
@@ -176,11 +176,6 @@ namespace pract7
             возраст.Text = "";
             вес.Text = "";
             пол.SelectedIndex = -1;
-            //почему не работает?
-            //faculties.SelectedIndex = -1;
-            //groups.SelectedIndex = -1;
-            //courses.SelectedIndex = -1;
-
         }
 
         private void person2_Checked(object sender, RoutedEventArgs e)
@@ -189,10 +184,6 @@ namespace pract7
             возраст.Text = "";
             вес.Text = "";
             пол.SelectedIndex = -1;
-            //почему не работает?
-            //faculties.SelectedIndex = -1;
-            //groups.SelectedIndex = -1;
-            //courses.SelectedIndex = -1;
         }
 
         private void faculties_SelectionChanged(object sender, SelectionChangedEventArgs e)
